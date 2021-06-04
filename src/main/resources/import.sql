@@ -1,0 +1,3 @@
+insert into prefeitura (id_prefeitura, nm_prefeitura, site, cnpj) values (1, 'Mogi das Cruzes', 'https://www.mogidascruzes.sp.gov.br/','46.523.270/0001-88');
+insert into prefeitura (id_prefeitura, nm_prefeitura, site, cnpj) values (2, 'Biritiba Mirim', 'http://biritibamirim.sp.gov.br/','46.523.288/0001-80');
+insert into prefeitura (id_prefeitura, nm_prefeitura, site, cnpj) values (3, 'São Paulo', 'https://www.capital.sp.gov.br/','46.395.000/0001-39');
