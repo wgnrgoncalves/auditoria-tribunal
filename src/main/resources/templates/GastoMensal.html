@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width" />
+<title>Gastos Mensais</title>
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="panel panel-default" style="margin: 10px">
+<div class="panel-heading">
+<h1 class="panel-title">Gastos Mensais</h1>
+</div>
+<div class="panel-body">
+<form class="form-inline" method="POST" th:object="${gastoMensal}" th:action="@{/GastosMensais}" style="margin: 20px 0">
+<div class="form-group">
+<input type="text" class="form-control" placeholder="Valor gasto" th:field="*{vl_gasto}"/>
+<input type="date" class="form-control" placeholder="Vigência" th:field="*{ano_mes_vigencia}"/>
+<input type="date" class="form-control" placeholder="Data de inserção" th:field="*{dt_insercao}"/>
+<select class="form-control" placeholder="Ativo" th:field="*{ativo}">
+  <option value=1>Ativo</option>
+  <option value=0>Inativo</option>
+</select>
+<button type="submit" class="btn btn-primary">Adicionar</button> </div>
+</form>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Valor gasto</th>
+			<th>Vigência</th>
+			<th>Data de inserção</th>
+			<th>Ativo</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="gastomensal : ${gastomensalrepository}">
+			<td th:text="${gastomensal.vl_gasto}"></td>
+			<td th:text="${gastomensal.ano_mes_vigencia}"></td>
+			<td th:text="${gastomensal.dt_insercao}"></td>
+			<td th:text="${gastomensal.ativo}"></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
