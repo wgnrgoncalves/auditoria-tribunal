@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping; 
 import org.springframework.web.servlet.ModelAndView;
-import com.fiap.auditoria.repository.Prefeituras;
+import com.fiap.auditoria.repository.PrefeituraRepository;
 
 @Controller
 public class PrefeiturasController {
 	@Autowired
-	private Prefeituras prefeituras;
+	private PrefeituraRepository prefeituras;
 	@GetMapping("/Prefeituras")
 	public ModelAndView listar() 
 	{ 

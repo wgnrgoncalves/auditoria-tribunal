@@ -13,6 +13,7 @@ public class Prefeitura implements Serializable {
 	private String nm_prefeitura;
 	private String site;
 	private String cnpj;
+	private Municipio municipio;
 	
 	public String getNm_prefeitura() {
 		return nm_prefeitura;
@@ -29,7 +30,16 @@ public class Prefeitura implements Serializable {
 	public String getCnpj() {
 		return cnpj;
 	}
+	
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
+	public Municipio getMunicipio() {
+		return municipio;
+	}
+	public void setMunicipio(Municipio municipio) {
+		this.municipio = municipio;
+	}
+	
+	
 }

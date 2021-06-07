@@ -17,8 +17,8 @@
 <div class="form-group">
 <input type="text" class="form-control" placeholder="Valor do Teto" th:field="*{vl_teto}"/>
 <input type="text" class="form-control" placeholder="Valor Crítico" th:field="*{vl_critico}"/>
-<input type="date" class="form-control" placeholder="Data Inicial" th:field="*{dt_inicial}"/>
-<input type="date" class="form-control" placeholder="Data Final" th:field="*{dt_final}"/>
+<input type="date" class="form-control" placeholder="Data Inicial" defaultValue="2013-01-08" th:field="*{dt_inicial}"/>
+<input type="date" class="form-control" placeholder="Data Final" defaultValue="2013-01-08" th:field="*{dt_final}"/>
 <button type="submit" class="btn btn-primary">Adicionar</button> </div>
 </form>
 <table class="table">

@@ -1,5 +1,7 @@
 package com.fiap.auditoria.Controller;
 
+import java.sql.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +29,11 @@ public class TetoGastoMensalController {
 	@PostMapping
 	public String salvar(TetoGastoMensal tetoGastoMensal) 
 	{
+		//tetoGastoMensal.setDt_inicial(new Date(12,12,12));
 		this.tetogastomensalrepository.save(tetoGastoMensal);
 		return "redirect:/TetoGastosMensais";
 	}
 }
+
+
+
