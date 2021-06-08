@@ -7,10 +7,11 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fiap.auditoria.repository.PrefeituraRepository;
 
 @Controller
+
 public class PrefeiturasController {
 	@Autowired
 	private PrefeituraRepository prefeituras;
-	@GetMapping("/Prefeituras")
+	@GetMapping("/")
 	public ModelAndView listar() 
 	{ 
 		ModelAndView modelAndView = new ModelAndView("Prefeituras"); 

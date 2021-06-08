@@ -26,6 +26,11 @@
 			<td th:text="${prefeitura.nm_prefeitura}"></td>
 			<td th:text="${prefeitura.site}"></td>
 			<td th:text="${prefeitura.cnpj}"></td>
+			<td class="text-center">
+				<a th:href="@{/GastosMensais}" class="btn btn-info">Gastos Mensais</a>
+				<a th:href="@{/TetoGastosMensais}" class="btn btn-danger">Teto de Gastos</a> 
+			</td>
+		
 		</tr>
 	</tbody>
 </table>
