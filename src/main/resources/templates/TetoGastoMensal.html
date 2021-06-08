@@ -14,12 +14,17 @@
 </div>
 <div class="panel-body">
 <form class="form-inline" method="POST" th:object="${tetoGastoMensal}" th:action="@{/TetoGastosMensais}" style="margin: 20px 0">
-<div class="form-group">
-<input type="text" class="form-control" placeholder="Valor do Teto" th:field="*{vl_teto}"/>
-<input type="text" class="form-control" placeholder="Valor Crítico" th:field="*{vl_critico}"/>
-<input type="date" class="form-control" placeholder="Data Inicial" defaultValue="2013-01-08" th:field="*{dt_inicial}"/>
-<input type="date" class="form-control" placeholder="Data Final" defaultValue="2013-01-08" th:field="*{dt_final}"/>
-<button type="submit" class="btn btn-primary">Adicionar</button> </div>
+<div class="row">
+	<div class="form-group">
+	<input type="hidden" th:field="*{id_teto_gasto_mensal}">
+	<input type="text" class="form-control" placeholder="Valor do Teto" required th:field="*{vl_teto}"/>
+	<input type="text" class="form-control" placeholder="Valor Crítico" required th:field="*{vl_critico}"/>
+	<input type="date" class="form-control" placeholder="Data Inicial" defaultValue="2013-01-08" required th:field="*{dt_inicial}"/>
+	<input type="date" class="form-control" placeholder="Data Final" defaultValue="2013-01-08" required th:field="*{dt_final}"/>
+	<button type="submit" class="btn btn-primary">Salvar</button>
+	<button type="reset" class="btn btn-secondary">Limpar</button>
+</div>
+</div>
 </form>
 <table class="table">
 	<thead>
@@ -36,6 +41,10 @@
 			<td th:text="${tetogastomensal.vl_critico}"></td>
 			<td th:text="${tetogastomensal.dt_inicial}"></td>
 			<td th:text="${tetogastomensal.dt_final}"></td>
+			<td class="text-center">
+			<a th:href="@{/TetoGastosMensais/Editar/{id}(id = ${tetogastomensal.id_teto_gasto_mensal})}" class="btn btn-info">Edtiar</a>
+				<a th:href="@{/TetoGastosMensais/Deletar/{id}(id = ${tetogastomensal.id_teto_gasto_mensal})}" class="btn btn-danger">Deletar</a> 
+			</td>
 		</tr>
 	</tbody>
 </table>

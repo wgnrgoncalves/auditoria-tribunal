@@ -1,20 +1,36 @@
 package com.fiap.auditoria.model;
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+
 
 @Entity
-public class TetoGastoMensal {
+public class TetoGastoMensal implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id 
 	@GeneratedValue
 	private Long id_teto_gasto_mensal;
+	
+	@NotBlank
+	@NotNull
 	private double vl_teto;
 	private double vl_critico;
 	private Date dt_inicial;
 	private Date dt_final;
+	public Long getId_teto_gasto_mensal() {
+		return id_teto_gasto_mensal;
+	}
+	public void setId_teto_gasto_mensal(Long id_teto_gasto_mensal) {
+		this.id_teto_gasto_mensal = id_teto_gasto_mensal;
+	}
 	
 	public double getVl_teto() {
 		return vl_teto;
@@ -40,4 +56,6 @@ public class TetoGastoMensal {
 	public void setDt_final(Date dt_final) {
 		this.dt_final = dt_final;
 	}
+	
+
 }
