@@ -15,14 +15,16 @@
 <div class="panel-body">
 <form class="form-inline" method="POST" th:object="${gastoMensal}" th:action="@{/GastosMensais}" style="margin: 20px 0">
 <div class="form-group">
-<input type="text" class="form-control" placeholder="Valor gasto" th:field="*{vl_gasto}"/>
-<input type="date" class="form-control" placeholder="Vigência" th:field="*{ano_mes_vigencia}"/>
-<input type="date" class="form-control" placeholder="Data de inserção" th:field="*{dt_insercao}"/>
+<input type="hidden" th:field="*{id_gasto_mensal}"/>
+<input type="text" class="form-control" placeholder="Valor gasto" required th:field="*{vl_gasto}"/>
+<input type="date" class="form-control" placeholder="Vigência" required th:field="*{ano_mes_vigencia}"/>
+<input type="date" class="form-control" placeholder="Data de inserção" required th:field="*{dt_insercao}"/>
 <select class="form-control" placeholder="Ativo" th:field="*{ativo}">
   <option value=1>Ativo</option>
   <option value=0>Inativo</option>
 </select>
-<button type="submit" class="btn btn-primary">Adicionar</button> </div>
+<button type="submit" class="btn btn-primary">Adicionar</button> 
+<button type="reset" class="btn btn-secondary">Limpar</button> </div>
 </form>
 <table class="table">
 	<thead>
@@ -31,6 +33,7 @@
 			<th>Vigência</th>
 			<th>Data de inserção</th>
 			<th>Ativo</th>
+			<th class="text-center" scope="col">Ação</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -39,6 +42,10 @@
 			<td th:text="${gastomensal.ano_mes_vigencia}"></td>
 			<td th:text="${gastomensal.dt_insercao}"></td>
 			<td th:text="${gastomensal.ativo}"></td>
+			<td class="text-center">
+				<a th:href="@{'/GastosMensais/editar/' + ${gastomensal.id_gasto_mensal}}" class="btn btn btn-info">Editar</a>
+				<a th:href="@{'/GastosMensais/excluir/' + ${gastomensal.id_gasto_mensal}}" class="btn btn btn-danger">Excluir</a>
+			</td>
 		</tr>
 	</tbody>
 </table>

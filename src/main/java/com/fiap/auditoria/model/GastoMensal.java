@@ -18,6 +18,13 @@ public class GastoMensal {
 	private Date dt_insercao;
 	private boolean ativo;
 	
+	
+	public Long getId_gasto_mensal() {
+		return id_gasto_mensal;
+	}
+	public void setId_gasto_mensal(Long id_gasto_mensal) {
+		this.id_gasto_mensal = id_gasto_mensal;
+	}
 	public double getVl_gasto() {
 		return vl_gasto;
 	}
